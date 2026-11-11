@@ -32,6 +32,7 @@ class ChapterScene extends Phaser.Scene {
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.dialog = new DialogManager();
+        this.events.once("shutdown", () => this.dialog.destroy());
         this.nextScene = null;
         this.spaceKey = this.input.keyboard.addKey(
             Phaser.Input.Keyboard.KeyCodes.SPACE
