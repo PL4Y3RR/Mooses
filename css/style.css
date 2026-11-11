@@ -1,0 +1,230 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#181818;
+    font-family:Verdana,sans-serif;
+}
+
+#game-container{
+    width:100vw;
+    height:100vh;
+}
+
+canvas{
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+/* ---------------- */
+/* QUEST PANEL      */
+/* ---------------- */
+
+#quest-panel{
+
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    width:260px;
+
+    background:rgba(255,255,255,.92);
+
+    border:3px solid #222;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    color:#111;
+
+    z-index:100;
+}
+
+#quest-panel h3{
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+    border-bottom:1px solid #ddd;
+
+    padding-bottom:5px;
+}
+
+#quest-list{
+
+    list-style:none;
+}
+
+#quest-list li{
+
+    margin-bottom:5px;
+}
+
+/* ---------------- */
+/* DIALOG           */
+/* ---------------- */
+
+#dialog-box{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(900px,92vw);
+
+    min-height:140px;
+
+    background:white;
+
+    border:4px solid black;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    z-index:200;
+}
+
+#speaker-name{
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+
+    font-size:18px;
+}
+
+#dialog-text{
+
+    font-size:20px;
+
+    line-height:1.5;
+}
+
+.hidden{
+
+    display:none;
+}
+
+/* ---------------- */
+/* MOBILE CONTROLS  */
+/* ---------------- */
+
+#mobile-controls{
+    position:fixed;
+    inset:0;
+    z-index:300;
+    display:none;
+    pointer-events:none;
+    user-select:none;
+    touch-action:none;
+}
+
+#joystick-base{
+    position:absolute;
+    width:148px;
+    aspect-ratio:1;
+    border:2px solid rgba(255,255,255,.52);
+    border-radius:50%;
+    background:rgba(22,34,32,.34);
+    box-shadow:inset 0 0 0 10px rgba(255,255,255,.06);
+    opacity:0;
+    transform:translate(-50%,-50%);
+    transition:opacity .12s ease;
+    pointer-events:none;
+}
+
+#joystick-base.visible{
+    opacity:1;
+}
+
+#joystick-knob{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:48%;
+    aspect-ratio:1;
+    border:2px solid rgba(255,255,255,.88);
+    border-radius:50%;
+    background:rgba(236,241,221,.78);
+    box-shadow:0 3px 12px rgba(0,0,0,.32);
+    transform:translate(-50%,-50%);
+}
+
+#btn-action{
+    position:absolute;
+    right:max(22px, env(safe-area-inset-right));
+    bottom:max(22px, env(safe-area-inset-bottom));
+    display:grid;
+    place-items:center;
+    width:70px;
+    height:70px;
+    border:none;
+    border-radius:50%;
+    background:#e9bd57;
+    color:#25291f;
+    box-shadow:0 4px 14px rgba(0,0,0,.38), inset 0 0 0 3px rgba(255,255,255,.38);
+    font-size:13px;
+    font-weight:bold;
+    padding:0;
+    pointer-events:auto;
+    touch-action:none;
+    -webkit-tap-highlight-color:transparent;
+}
+
+#btn-action:active{
+    background:#f6d77f;
+    transform:scale(.94);
+}
+
+/* ---------------- */
+/* MOBILE           */
+/* ---------------- */
+
+@media (max-width:900px){
+
+    #quest-panel{
+
+        width:180px;
+
+        font-size:13px;
+    }
+
+    #dialog-text{
+
+        font-size:16px;
+    }
+
+    #dialog-box{
+        bottom:max(108px, calc(env(safe-area-inset-bottom) + 100px));
+        width:min(820px,84vw);
+        min-height:110px;
+        padding:12px;
+        touch-action:none;
+    }
+
+    #mobile-controls{
+
+        display:block;
+    }
+
+
+    canvas{
+        touch-action:none;
+    }
+}

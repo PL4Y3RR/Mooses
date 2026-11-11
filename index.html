@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Mooses - Midian</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+</head>
+
+<body>
+
+    <div id="game-container"></div>
+
+    <div id="quest-panel">
+        <h3>Tehtävät</h3>
+        <ul id="quest-list">
+            <li>Etsi lampaat</li>
+        </ul>
+    </div>
+
+    <div id="dialog-box" class="hidden">
+        <div id="speaker-name">
+            Kertoja
+        </div>
+        <div id="dialog-text">
+            Tervetuloa Midianiin.
+        </div>
+    </div>
+
+    <div id="mobile-controls">
+        <div id="joystick-base" aria-hidden="true">
+            <div id="joystick-knob"></div>
+        </div>
+        <button id="btn-action" type="button" aria-label="Toiminto, välilyönti">
+            SPACE
+        </button>
+    </div>
+
+    <script src="js/preload.js"></script>
+    
+    <script src="js/player.js"></script>
+    <script src="js/quests.js"></script>
+    <script src="js/dialog.js"></script>
+    <script src="js/save.js"></script>
+    <script src="js/mobile-controls.js"></script>
+    
+    <script src="js/scenes/ChapterScene.js"></script>
+    <script src="js/scenes/MenuScene.js"></script>
+    <script src="js/scenes/MidianScene.js"></script>
+    <script src="js/scenes/EgyptReturnScene.js"></script>
+    <script src="js/scenes/PharaohPalaceScene.js"></script>
+    <script src="js/scenes/PlaguesScene.js"></script>
+    <script src="js/scenes/ExodusScene.js"></script>
+    <script src="js/scenes/WildernessScene.js"></script>
+    <script src="js/scenes/SpiesScene.js"></script>
+    <script src="js/scenes/NeboScene.js"></script>
+
+    <script src="js/boot.js"></script>
+    
+</body>
+</html>
